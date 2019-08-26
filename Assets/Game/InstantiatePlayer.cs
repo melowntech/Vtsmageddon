@@ -29,5 +29,10 @@ public class InstantiatePlayer : MonoBehaviour
             cam.target = car;
             cam.enabled = true;
         }
+        {
+            var cam = FindObjectOfType<MinimapCamera>();
+            cam.target = car;
+            cam.enabled = true;
+        }
     }
 }

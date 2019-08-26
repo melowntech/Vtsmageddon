@@ -34,8 +34,8 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - VtsMinimapCamera
+  - VtsMainCamera
   - VtsColliders
   - 
   m_SortingLayers:

@@ -23,7 +23,7 @@ public class ZombieController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (counter++ % 30 == 0)
+        if (counter++ % 30 == 13)
         {
             agent.SetDestination(player.transform.position);
         }
@@ -31,7 +31,7 @@ public class ZombieController : MonoBehaviour
 
     void Update()
     {
-        if (!agent.isOnNavMesh)
+        if (!agent.isOnNavMesh || (transform.position - player.transform.position).magnitude > 100)
         {
             Destroy(gameObject); // destroy this zombie
             return;
@@ -54,7 +54,7 @@ public class ZombieController : MonoBehaviour
     static void KillPart(Transform p, Vector3 force)
     {
         GameObject g = p.gameObject;
-        g.tag = "";
+        g.tag = "Untagged";
         SkinnedMeshRenderer smr = g.GetComponent<SkinnedMeshRenderer>();
         if (smr)
         {
