@@ -5,6 +5,7 @@ public class NavMeshUpdate : MonoBehaviour
 {
     private NavMeshSurface surface;
     private AsyncOperation op;
+    private GameObject player;
 
     void Start()
     {
@@ -14,11 +15,14 @@ public class NavMeshUpdate : MonoBehaviour
 
     void Update()
     {
+        if (!player)
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+            return;
+        }
         if (op != null && !op.isDone)
             return;
-        var player = GameObject.FindGameObjectWithTag("Player");
-        if (player)
-            surface.center = player.transform.position;
+        surface.center = player.transform.position;
         op = surface.UpdateNavMesh(surface.navMeshData);
     }
 }
