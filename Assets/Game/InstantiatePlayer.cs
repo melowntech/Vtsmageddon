@@ -20,7 +20,7 @@ public class InstantiatePlayer : MonoBehaviour
             VtsColliderProbe cp = car.AddComponent<VtsColliderProbe>();
             cp.mapObject = map;
             cp.collidersLod = 20;
-            cp.collidersDistance = 50; // this is gonna be heavy
+            cp.collidersDistance = 100; // this is gonna be heavy
             cp.colliderPrefab = colliderPrefab;
         }
         {
