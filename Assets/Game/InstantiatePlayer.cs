@@ -16,6 +16,7 @@ public class InstantiatePlayer : MonoBehaviour
         GameObject car = Instantiate(SelectCar.SelectedCarPrefab);
         GameObject map = FindObjectOfType<VtsMap>().gameObject;
         car.AddComponent<VtsRigidBodyActivate>().map = map;
+        car.AddComponent<Reset>();
         {
             VtsColliderProbe cp = car.AddComponent<VtsColliderProbe>();
             cp.mapObject = map;
