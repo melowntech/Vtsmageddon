@@ -100,8 +100,8 @@ NavMeshSettings:
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
-    agentSlope: 45
-    agentClimb: 0.4
+    agentSlope: 25
+    agentClimb: 0.75
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
@@ -1069,7 +1069,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90847cc15326c8d4a8c8ecc883470b08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colliderPrefab: {fileID: 1757029708312986, guid: c38a7d5b32504484aa4a896d50b319d8,
+  colliderPrefabCar: {fileID: 1746481396755606, guid: fd2f7af7d92b79340b8ca62bb6c7f77b,
+    type: 2}
+  colliderPrefabNavmesh: {fileID: 1757029708312986, guid: c38a7d5b32504484aa4a896d50b319d8,
     type: 2}
 --- !u!1001 &1834290683
 Prefab:

@@ -9,31 +9,31 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1757029708312986}
+  m_RootGameObject: {fileID: 1746481396755606}
   m_IsPrefabAsset: 1
---- !u!1 &1757029708312986
+--- !u!1 &1746481396755606
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4682521371669806}
-  - component: {fileID: 64215977136588132}
-  - component: {fileID: 114267642634299846}
-  m_Layer: 30
-  m_Name: VtsCollider2
+  - component: {fileID: 4705322992554698}
+  - component: {fileID: 64291666298988164}
+  - component: {fileID: 114551859038876496}
+  m_Layer: 31
+  m_Name: ColliderCar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4682521371669806
+--- !u!4 &4705322992554698
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1757029708312986}
+  m_GameObject: {fileID: 1746481396755606}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -41,12 +41,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &64215977136588132
+--- !u!64 &64291666298988164
 MeshCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1757029708312986}
+  m_GameObject: {fileID: 1746481396755606}
   m_Material: {fileID: 13400000, guid: 47f55222c396c1f4cbe24131c68e6d5b, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -55,12 +55,12 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 0}
---- !u!114 &114267642634299846
+--- !u!114 &114551859038876496
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1757029708312986}
+  m_GameObject: {fileID: 1746481396755606}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf7f4062943f5e44e80cea90474cbc3b, type: 3}

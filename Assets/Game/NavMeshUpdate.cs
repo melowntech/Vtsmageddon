@@ -4,8 +4,9 @@ using UnityEngine.AI;
 public class NavMeshUpdate : MonoBehaviour
 {
     private NavMeshSurface surface;
-    private AsyncOperation op;
     private GameObject player;
+    private AsyncOperation op;
+    private uint counter = 0;
 
     void Start()
     {
@@ -21,6 +22,9 @@ public class NavMeshUpdate : MonoBehaviour
             return;
         }
         if (op != null && !op.isDone)
+            return;
+        op = null;
+        if (counter++ % 30 != 13)
             return;
         surface.center = player.transform.position;
         op = surface.UpdateNavMesh(surface.navMeshData);

@@ -3,7 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class InstantiatePlayer : MonoBehaviour
 {
-    public GameObject colliderPrefab;
+    public GameObject colliderPrefabCar;
+    public GameObject colliderPrefabNavmesh;
 
     void Start ()
     {
@@ -21,8 +22,15 @@ public class InstantiatePlayer : MonoBehaviour
             VtsColliderProbe cp = car.AddComponent<VtsColliderProbe>();
             cp.mapObject = map;
             cp.collidersLod = 20;
-            cp.collidersDistance = 100; // this is gonna be heavy
-            cp.colliderPrefab = colliderPrefab;
+            cp.collidersDistance = 100;
+            cp.colliderPrefab = colliderPrefabCar;
+        }
+        {
+            VtsColliderProbe cp = car.AddComponent<VtsColliderProbe>();
+            cp.mapObject = map;
+            cp.collidersLod = 18;
+            cp.collidersDistance = 100;
+            cp.colliderPrefab = colliderPrefabNavmesh;
         }
         {
             var cam = FindObjectOfType<FollowingCamera>();

@@ -36,8 +36,8 @@ TagManager:
   - 
   - VtsMinimapCamera
   - VtsMainCamera
-  - VtsColliders
-  - 
+  - ColliderNavmesh
+  - ColliderCar
   m_SortingLayers:
   - name: Default
     uniqueID: 0

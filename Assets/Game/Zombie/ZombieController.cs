@@ -8,7 +8,7 @@ public class ZombieController : MonoBehaviour
     private GameObject player;
     private Animator animator;
     private NavMeshAgent agent;
-    private int counter = 0;
+    private uint counter = 0;
 
     void Start()
     {
@@ -21,14 +21,6 @@ public class ZombieController : MonoBehaviour
         //agent.updateUpAxis = false;
     }
 
-    void FixedUpdate()
-    {
-        if (counter++ % 30 == 13)
-        {
-            agent.SetDestination(player.transform.position);
-        }
-    }
-
     void Update()
     {
         if (!agent.isOnNavMesh || (transform.position - player.transform.position).magnitude > 100)
@@ -36,6 +28,8 @@ public class ZombieController : MonoBehaviour
             Destroy(gameObject); // destroy this zombie
             return;
         }
+        if (counter++ % 60 == 13)
+            agent.SetDestination(player.transform.position);
         if (!agent.hasPath)
             return;
         Vector3 move = agent.desiredVelocity;
@@ -71,7 +65,6 @@ public class ZombieController : MonoBehaviour
         }
         else
             Destroy(g);
-
         int cnt = p.childCount;
         for (int i = 0; i < cnt; i++)
             KillPart(p.GetChild(i), force);
