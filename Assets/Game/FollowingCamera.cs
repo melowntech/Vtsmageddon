@@ -38,7 +38,7 @@ public class FollowingCamera : MonoBehaviour
             {
                 Vector3 dir = (rot * new Vector3(x * cameraSize, y * cameraSize, -maxDistance)).normalized;
                 Debug.DrawRay(pivot, dir * distance);
-                if (Physics.Raycast(pivot, dir, out hit, distance))
+                if (Physics.Raycast(pivot, dir, out hit, distance, 1 << 31))
                     dst = Mathf.Min(hit.distance - 0.5f, dst);
             }
         }

@@ -10,6 +10,8 @@ public class ZombieController : MonoBehaviour
     private NavMeshAgent agent;
     private uint counter = 0;
 
+    public static uint killCount = 0;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -28,7 +30,7 @@ public class ZombieController : MonoBehaviour
             Destroy(gameObject); // destroy this zombie
             return;
         }
-        if (counter++ % 60 == 13)
+        if (counter++ % 120 == 13)
             agent.SetDestination(player.transform.position);
         if (!agent.hasPath)
             return;
@@ -76,5 +78,6 @@ public class ZombieController : MonoBehaviour
         if (col.gameObject.tag != "Player")
             return;
         KillPart(transform, col.impulse / GetComponent<Rigidbody>().mass);
+        killCount++;
     }
 }

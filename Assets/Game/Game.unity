@@ -1069,9 +1069,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90847cc15326c8d4a8c8ecc883470b08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colliderPrefabCar: {fileID: 1746481396755606, guid: fd2f7af7d92b79340b8ca62bb6c7f77b,
-    type: 2}
-  colliderPrefabNavmesh: {fileID: 1757029708312986, guid: c38a7d5b32504484aa4a896d50b319d8,
+  colliderPrefab: {fileID: 1746481396755606, guid: fd2f7af7d92b79340b8ca62bb6c7f77b,
     type: 2}
 --- !u!1001 &1834290683
 Prefab:
@@ -1160,15 +1158,15 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 1073741824
+    m_Bits: 2147483648
   m_UseGeometry: 1
   m_DefaultArea: 0
   m_IgnoreNavMeshAgent: 1
   m_IgnoreNavMeshObstacle: 1
   m_OverrideTileSize: 0
   m_TileSize: 256
-  m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_OverrideVoxelSize: 1
+  m_VoxelSize: 0.4
   m_BuildHeightMesh: 0
   m_NavMeshData: {fileID: 23800000, guid: 85c544cfa542a6344bc3adc4a4632e4a, type: 2}
 --- !u!4 &1839871036

@@ -24,7 +24,7 @@ public class NavMeshUpdate : MonoBehaviour
         if (op != null && !op.isDone)
             return;
         op = null;
-        if (counter++ % 30 != 13)
+        if (counter++ % 120 != 13)
             return;
         surface.center = player.transform.position;
         op = surface.UpdateNavMesh(surface.navMeshData);

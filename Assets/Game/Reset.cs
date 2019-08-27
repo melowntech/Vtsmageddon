@@ -27,7 +27,7 @@ public class Reset : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles[1], 0);
             transform.position += transform.rotation * new Vector3(Input.GetAxis("Horizontal"), 1, Input.GetAxis("Vertical")) * unstuckSpeed;
         }
-        else if (Input.GetAxis("Restart") > 0)
+        if (Input.GetAxis("Restart") > 0)
         {
             transform.position = initPos;
             transform.rotation = initRot;

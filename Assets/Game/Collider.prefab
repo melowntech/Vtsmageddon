@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 64291666298988164}
   - component: {fileID: 114551859038876496}
   m_Layer: 31
-  m_Name: ColliderCar
+  m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
