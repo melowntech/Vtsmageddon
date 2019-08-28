@@ -317,7 +317,6 @@ GameObject:
   m_Component:
   - component: {fileID: 633277577}
   - component: {fileID: 633277576}
-  - component: {fileID: 633277575}
   - component: {fileID: 633277574}
   - component: {fileID: 633277573}
   m_Layer: 0
@@ -367,13 +366,6 @@ MonoBehaviour:
   transparentPrefab: {fileID: 1447127621452838, guid: 988ee46100bc29d4c9cd5d8257c2bd1b,
     type: 2}
   renderLayer: 28
---- !u!81 &633277575
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 633277572}
-  m_Enabled: 1
 --- !u!20 &633277576
 Camera:
   m_ObjectHideFlags: 0
@@ -964,7 +956,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.392}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

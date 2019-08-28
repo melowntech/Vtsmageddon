@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -8,16 +6,15 @@ public class ZombieController : MonoBehaviour
     private GameObject player;
     private Animator animator;
     private NavMeshAgent agent;
-    private uint counter = 0;
-
-    public static uint killCount = 0;
+    private uint pathUpdateDelay = 0;
+    private uint standingCounter = 0;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
-        agent.stoppingDistance = Random.Range(4f, 7f);
+        agent.stoppingDistance = Mathf.Pow(Random.value, 0.5f) * 20;
         //agent.updatePosition = false;
         //agent.updateRotation = false;
         //agent.updateUpAxis = false;
@@ -30,7 +27,7 @@ public class ZombieController : MonoBehaviour
             Destroy(gameObject); // destroy this zombie
             return;
         }
-        if (counter++ % 120 == 13)
+        if (pathUpdateDelay++ % 120 == 13)
             agent.SetDestination(player.transform.position);
         if (!agent.hasPath)
             return;
@@ -40,14 +37,29 @@ public class ZombieController : MonoBehaviour
         move = transform.InverseTransformDirection(move);
         move = Vector3.ProjectOnPlane(move, Vector3.up);
         bool close = agent.remainingDistance < agent.stoppingDistance + 0.1;
-        if (close)
+        if (close || move.magnitude < 0.1f)
+        {
             move = Vector3.zero;
+            if (standingCounter++ > 1500 && Random.value < 0.0001f)
+            {
+                KillPart(transform);
+                return;
+            }
+        }
+        else
+            standingCounter = 0;
         animator.SetFloat("forward", move.z);
         animator.SetFloat("turn", move.x);
-        animator.SetBool("attack", close && Random.value < 0.05f);
+        if (close)
+        {
+            if (Random.value < 0.003f)
+                animator.SetBool("attack", true);
+        }
+        else
+            animator.SetBool("attack", false);
     }
 
-    static void KillPart(Transform p, Vector3 force)
+    static void KillPart(Transform p)
     {
         GameObject g = p.gameObject;
         g.tag = "Untagged";
@@ -61,7 +73,6 @@ public class ZombieController : MonoBehaviour
             r.mass = 1;
             r.drag = 0.3f;
             r.angularDrag = 0.8f;
-            r.AddForce(force);
             Destroy(smr);
             Destroy(g, Random.Range(5f, 15f));
         }
@@ -69,7 +80,7 @@ public class ZombieController : MonoBehaviour
             Destroy(g);
         int cnt = p.childCount;
         for (int i = 0; i < cnt; i++)
-            KillPart(p.GetChild(i), force);
+            KillPart(p.GetChild(i));
         p.transform.DetachChildren();
     }
 
@@ -77,7 +88,7 @@ public class ZombieController : MonoBehaviour
     {
         if (col.gameObject.tag != "Player")
             return;
-        KillPart(transform, col.impulse / GetComponent<Rigidbody>().mass);
-        killCount++;
+        KillPart(transform);
+        ScoreLabel.killCount++;
     }
 }

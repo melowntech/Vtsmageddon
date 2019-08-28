@@ -6,7 +6,7 @@ public class NavMeshUpdate : MonoBehaviour
     private NavMeshSurface surface;
     private GameObject player;
     private AsyncOperation op;
-    private uint counter = 0;
+    private uint updateDelay = 0;
 
     void Start()
     {
@@ -24,7 +24,7 @@ public class NavMeshUpdate : MonoBehaviour
         if (op != null && !op.isDone)
             return;
         op = null;
-        if (counter++ % 120 != 13)
+        if (updateDelay++ % 120 != 13)
             return;
         surface.center = player.transform.position;
         op = surface.UpdateNavMesh(surface.navMeshData);
