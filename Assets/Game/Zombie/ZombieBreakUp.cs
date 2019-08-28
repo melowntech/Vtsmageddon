@@ -2,29 +2,31 @@ using UnityEngine;
 
 public class ZombieBreakUp : MonoBehaviour
 {
+    private static void BreakUp(SkinnedMeshRenderer smr)
+    {
+        GameObject g = smr.gameObject;
+        g.tag = "Untagged";
+        g.AddComponent<MeshRenderer>().sharedMaterial = smr.sharedMaterial;
+        g.AddComponent<MeshFilter>().mesh = smr.sharedMesh;
+        //g.AddComponent<SphereCollider>().radius = 0.1f;
+        var mc = g.AddComponent<MeshCollider>();
+        mc.convex = true;
+        mc.sharedMesh = smr.sharedMesh;
+        Rigidbody r = g.AddComponent<Rigidbody>();
+        r.mass = 2;
+        //r.drag = 0.3f;
+        //r.angularDrag = 0.8f;
+        Destroy(smr);
+        Destroy(g, Random.Range(5f, 15f));
+        g.transform.SetParent(null);
+    }
+
     public static void BreakUp(Transform p)
     {
         GameObject g = p.gameObject;
-        g.tag = "Untagged";
-        SkinnedMeshRenderer smr = g.GetComponent<SkinnedMeshRenderer>();
-        if (smr)
-        {
-            g.AddComponent<MeshRenderer>().sharedMaterial = smr.sharedMaterial;
-            g.AddComponent<MeshFilter>().mesh = smr.sharedMesh;
-            g.AddComponent<SphereCollider>().radius = 0.1f;
-            Rigidbody r = g.AddComponent<Rigidbody>();
-            r.mass = 1;
-            r.drag = 0.3f;
-            r.angularDrag = 0.8f;
-            Destroy(smr);
-            Destroy(g, Random.Range(5f, 15f));
-        }
-        else
-            Destroy(g);
-        int cnt = p.childCount;
-        for (int i = 0; i < cnt; i++)
-            BreakUp(p.GetChild(i));
-        p.transform.DetachChildren();
+        foreach (SkinnedMeshRenderer smr in g.transform.GetComponentsInChildren<SkinnedMeshRenderer>())
+            BreakUp(smr);
+        Destroy(g);
     }
 
     void OnCollisionEnter(Collision col)
