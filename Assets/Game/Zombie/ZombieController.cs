@@ -6,18 +6,22 @@ public class ZombieController : MonoBehaviour
     private GameObject player;
     private Animator animator;
     private NavMeshAgent agent;
+    private new Rigidbody rigidbody;
     private uint pathUpdateDelay = 0;
     private uint standingCounter = 0;
+    private float targetDistance = 0;
+    private bool targetDistanceHysteresis = false;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
-        agent.stoppingDistance = Mathf.Pow(Random.value, 0.5f) * 20;
-        //agent.updatePosition = false;
+        agent.updatePosition = false;
         //agent.updateRotation = false;
-        //agent.updateUpAxis = false;
+        agent.updateUpAxis = false;
+        rigidbody = GetComponent<Rigidbody>();
+        targetDistance = Mathf.Pow(Random.value, 0.5f) * 20;
     }
 
     void Update()
@@ -27,68 +31,66 @@ public class ZombieController : MonoBehaviour
             Destroy(gameObject); // destroy this zombie
             return;
         }
+
+        agent.nextPosition = transform.position;
         if (pathUpdateDelay++ % 120 == 13)
             agent.SetDestination(player.transform.position);
         if (!agent.hasPath)
+        {
+            MoveDesire(Vector3.zero);
             return;
+        }
+
         Vector3 move = agent.desiredVelocity;
-        if (move.magnitude > 1)
-            move.Normalize();
         move = transform.InverseTransformDirection(move);
         move = Vector3.ProjectOnPlane(move, Vector3.up);
-        bool close = agent.remainingDistance < agent.stoppingDistance + 0.1;
-        if (close || move.magnitude < 0.1f)
-        {
+
+        if (agent.remainingDistance < targetDistance - 1)
+            targetDistanceHysteresis = true;
+        else if (agent.remainingDistance > targetDistance + 1)
+            targetDistanceHysteresis = false;
+        if (targetDistanceHysteresis)
             move = Vector3.zero;
-            if (standingCounter++ > 1500 && Random.value < 0.0001f)
-            {
-                KillPart(transform);
-                return;
-            }
-        }
+
+        MoveDesire(move);
+    }
+
+    void MoveDesire(Vector3 move)
+    {
+        float spd = move.magnitude;
+        if (move.magnitude > 1)
+            move.Normalize();
+
+        if (move.magnitude < 0.01f)
+            standingCounter++;
         else
             standingCounter = 0;
+
+        animator.speed = Mathf.Max(1, spd);
         animator.SetFloat("forward", move.z);
         animator.SetFloat("turn", move.x);
-        if (close)
+        if (standingCounter > 60)
         {
             if (Random.value < 0.003f)
                 animator.SetBool("attack", true);
+            else if (Random.value < 0.001f)
+                animator.SetBool("hurt", true);
         }
         else
-            animator.SetBool("attack", false);
-    }
-
-    static void KillPart(Transform p)
-    {
-        GameObject g = p.gameObject;
-        g.tag = "Untagged";
-        SkinnedMeshRenderer smr = g.GetComponent<SkinnedMeshRenderer>();
-        if (smr)
         {
-            g.AddComponent<MeshRenderer>().sharedMaterial = smr.sharedMaterial;
-            g.AddComponent<MeshFilter>().mesh = smr.sharedMesh;
-            g.AddComponent<SphereCollider>().radius = 0.1f;
-            Rigidbody r = g.AddComponent<Rigidbody>();
-            r.mass = 1;
-            r.drag = 0.3f;
-            r.angularDrag = 0.8f;
-            Destroy(smr);
-            Destroy(g, Random.Range(5f, 15f));
+            animator.SetBool("attack", false);
+            animator.SetBool("hurt", false);
         }
-        else
-            Destroy(g);
-        int cnt = p.childCount;
-        for (int i = 0; i < cnt; i++)
-            KillPart(p.GetChild(i));
-        p.transform.DetachChildren();
+
+        if (standingCounter > 600 && Random.value < 0.0001f)
+            ZombieBreakUp.BreakUp(transform);
     }
 
-    void OnCollisionEnter(Collision col)
+    void OnAnimatorMove()
     {
-        if (col.gameObject.tag != "Player")
-            return;
-        KillPart(transform);
-        ScoreLabel.killCount++;
+        Vector3 currentVelocity = rigidbody.velocity;
+        Vector3 animatorVelocity = animator.deltaPosition / Time.deltaTime;
+        animatorVelocity.y = currentVelocity.y;
+        rigidbody.velocity = animatorVelocity;
     }
 }

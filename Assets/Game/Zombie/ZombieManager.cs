@@ -20,7 +20,7 @@ public class ZombieManager : MonoBehaviour
             Vector3 origin = player.transform.position + new Vector3(Mathf.Cos(ang) * dist, 1000, Mathf.Sin(ang) * dist);
             RaycastHit hit;
             if (Physics.Raycast(origin, new Vector3(0, -1, 0), out hit))
-                Instantiate(zombiePrefab, hit.point, Quaternion.identity, null);
+                Instantiate(zombiePrefab, hit.point, Quaternion.identity, transform);
         }
     }
 }
