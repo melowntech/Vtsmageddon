@@ -182,12 +182,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: SkyCarBodyWhite
-    second: {fileID: 2100000, guid: b8b9f35beef49244a88fb20578b1c2de, type: 2}
+    second: {fileID: 2100000, guid: d425c5c4cb38fd44f95b13e9f94575c2, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: SkyCarLightCoversWhite
-    second: {fileID: 2100000, guid: 6b649024ad0993f47bec7f24467c225f, type: 2}
+    second: {fileID: 2100000, guid: bf5faaa3a8e23de45bf1350be2893dd7, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -197,12 +197,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: SkyCarWheelWhite
-    second: {fileID: 2100000, guid: 3524eaceb966dbd43ae0ed2658013f2d, type: 2}
+    second: {fileID: 2100000, guid: 6021947067b9d6c4bac8d9e085a71558, type: 2}
   materials:
     importMaterials: 1
     materialName: 1
     materialSearch: 2
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
