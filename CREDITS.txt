@@ -1,0 +1,12 @@
+Standard assets car and car controls:
+https://assetstore.unity.com/packages/essentials/asset-packs/standard-assets-32351
+
+Zombie model:
+https://assetstore.unity.com/packages/3d/characters/humanoids/zombie-30232
+
+Zombie animations:
+https://assetstore.unity.com/packages/3d/animations/zombie-animation-pack-free-150219
+
+
+All external assets has been modified!
+
