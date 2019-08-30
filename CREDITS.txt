@@ -7,6 +7,14 @@ https://assetstore.unity.com/packages/3d/characters/humanoids/zombie-30232
 Zombie animations:
 https://assetstore.unity.com/packages/3d/animations/zombie-animation-pack-free-150219
 
+Kart:
+https://assetstore.unity.com/packages/3d/vehicles/land/steam-punk-kart-58941
+
+Scout car:
+https://assetstore.unity.com/packages/3d/vehicles/land/m3a1-scout-car-53149
+
+Fork loader:
+https://assetstore.unity.com/packages/3d/vehicles/land/fork-loader-hq-123806
 
 All external assets has been modified!
 

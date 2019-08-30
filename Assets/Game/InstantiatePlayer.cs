@@ -1,19 +1,12 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class InstantiatePlayer : MonoBehaviour
 {
     public GameObject colliderPrefab;
 
-    void Start ()
+    void Start()
     {
-        if (!SelectCar.SelectedCarPrefab)
-        {
-            SceneManager.LoadScene("Init"); // go back to menu
-            return;
-        }
-
-        GameObject car = Instantiate(SelectCar.SelectedCarPrefab);
+        GameObject car = Instantiate(SelectCar.SelectedCarPrefab, Vector3.zero, Quaternion.identity);
         GameObject map = FindObjectOfType<VtsMap>().gameObject;
         car.AddComponent<VtsRigidBodyActivate>().map = map;
         car.AddComponent<Reset>();
