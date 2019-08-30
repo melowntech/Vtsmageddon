@@ -10,8 +10,8 @@ public class ZombieBreakUp : MonoBehaviour
         g.AddComponent<MeshFilter>().mesh = smr.sharedMesh;
         //g.AddComponent<SphereCollider>().radius = 0.1f;
         var mc = g.AddComponent<MeshCollider>();
-        mc.convex = true;
         mc.sharedMesh = smr.sharedMesh;
+        mc.convex = true;
         Rigidbody r = g.AddComponent<Rigidbody>();
         r.mass = 2;
         //r.drag = 0.3f;
