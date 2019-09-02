@@ -211,6 +211,7 @@ GameObject:
   - component: {fileID: 195087231598559972}
   - component: {fileID: 114417167934432606}
   - component: {fileID: 114402286441009542}
+  - component: {fileID: 114848514828557306}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Enemy
@@ -228,7 +229,6 @@ GameObject:
   - component: {fileID: 4491843594705566}
   - component: {fileID: 33303768871815912}
   - component: {fileID: 23303898059266092}
-  - component: {fileID: 114381664328518298}
   m_Layer: 28
   m_Name: Minimap Marker
   m_TagString: Untagged
@@ -1330,17 +1330,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114381664328518298
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1314776267607178}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff33f79d5f114a242a20164bd5e7224f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114402286441009542
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1361,6 +1350,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 69b30ddd03e817148841f900292e8621, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114848514828557306
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1300611964618398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff33f79d5f114a242a20164bd5e7224f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!136 &136691949432917240
