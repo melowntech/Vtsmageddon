@@ -335,7 +335,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1888910308385224}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.59352875, y: 0.20799994, z: 0.6427779}
+  m_LocalPosition: {x: 0.59352875, y: 0.17000008, z: 0.6427779}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4229933779499878}
@@ -361,7 +361,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1728233319731382}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.6800575, y: 0.28838423, z: -1.0508766}
+  m_LocalPosition: {x: 0.6800575, y: 0.23138419, z: -1.0508766}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4228881052049484}
@@ -409,7 +409,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1772250416446292}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.6807143, y: 0.17699999, z: 0.6427775}
+  m_LocalPosition: {x: 0.6807143, y: 0.119999945, z: 0.6427775}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4228881052049484}
@@ -448,7 +448,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1807096182856618}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.59352684, y: 0.208, z: 0.6427777}
+  m_LocalPosition: {x: -0.59352684, y: 0.17000014, z: 0.6427777}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4229933779499878}
@@ -491,7 +491,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1467607884808090}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.68071175, y: 0.177, z: 0.6427777}
+  m_LocalPosition: {x: -0.68071175, y: 0.12, z: 0.6427777}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4228881052049484}
@@ -517,7 +517,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1866271943701306}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.6843569, y: 0.28838423, z: -1.0508765}
+  m_LocalPosition: {x: -0.6843569, y: 0.23138419, z: -1.0508765}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4228881052049484}
@@ -548,7 +548,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1533573772510414}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.6800575, y: 0.31999996, z: -1.0508772}
+  m_LocalPosition: {x: 0.6800575, y: 0.282, z: -1.0508772}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4229933779499878}
@@ -587,7 +587,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1569912804084056}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.6843567, y: 0.3199998, z: -1.0508771}
+  m_LocalPosition: {x: -0.6843567, y: 0.28199995, z: -1.0508771}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4229933779499878}
@@ -1270,6 +1270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CarDriveType: 2
+  m_InverseSteering: 0
   m_WheelColliders:
   - {fileID: 146716038885894684}
   - {fileID: 146447888085080912}
@@ -1395,7 +1396,7 @@ WheelCollider:
   m_SuspensionSpring:
     spring: 70000
     damper: 1500
-    targetPosition: 0.7
+    targetPosition: 0.5
   m_SuspensionDistance: 0.1
   m_ForceAppPointDistance: 0.01
   m_Mass: 10
@@ -1424,7 +1425,7 @@ WheelCollider:
   m_SuspensionSpring:
     spring: 70000
     damper: 1500
-    targetPosition: 0.7
+    targetPosition: 0.5
   m_SuspensionDistance: 0.1
   m_ForceAppPointDistance: 0.01
   m_Mass: 15
@@ -1453,7 +1454,7 @@ WheelCollider:
   m_SuspensionSpring:
     spring: 70000
     damper: 1500
-    targetPosition: 0.7
+    targetPosition: 0.5
   m_SuspensionDistance: 0.1
   m_ForceAppPointDistance: 0.01
   m_Mass: 10
@@ -1482,7 +1483,7 @@ WheelCollider:
   m_SuspensionSpring:
     spring: 70000
     damper: 1500
-    targetPosition: 0.7
+    targetPosition: 0.5
   m_SuspensionDistance: 0.1
   m_ForceAppPointDistance: 0.01
   m_Mass: 15

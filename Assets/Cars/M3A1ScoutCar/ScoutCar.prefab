@@ -1412,6 +1412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CarDriveType: 2
+  m_InverseSteering: 0
   m_WheelColliders:
   - {fileID: 146401050294624236}
   - {fileID: 146508225138285824}
