@@ -6,6 +6,8 @@ public class InstantiatePlayer : MonoBehaviour
 
     void Start()
     {
+        if (!SelectCar.SelectedCarPrefab)
+            return;
         GameObject car = Instantiate(SelectCar.SelectedCarPrefab, Vector3.zero, Quaternion.identity);
         GameObject map = FindObjectOfType<VtsMap>().gameObject;
         car.AddComponent<VtsRigidBodyActivate>().map = map;

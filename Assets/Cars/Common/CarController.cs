@@ -51,7 +51,7 @@ namespace UnityStandardAssets.Vehicles.Car
         public bool Skidding { get; private set; }
         public float BrakeInput { get; private set; }
         public float CurrentSteerAngle{ get { return m_SteerAngle; }}
-        public float CurrentSpeed{ get { return m_Rigidbody.velocity.magnitude*2.23693629f; }}
+        public float CurrentSpeed{ get { return m_Rigidbody ? m_Rigidbody.velocity.magnitude*2.23693629f : 0; }}
         public float MaxSpeed{get { return m_Topspeed; }}
         public float Revs { get; private set; }
         public float AccelInput { get; private set; }
@@ -178,6 +178,8 @@ namespace UnityStandardAssets.Vehicles.Car
 
         private void CapSpeed()
         {
+            if (!m_Rigidbody)
+                return;
             float speed = m_Rigidbody.velocity.magnitude;
             switch (m_SpeedType)
             {
@@ -199,7 +201,6 @@ namespace UnityStandardAssets.Vehicles.Car
 
         private void ApplyDrive(float accel, float footbrake)
         {
-
             float thrustTorque;
             switch (m_CarDriveType)
             {

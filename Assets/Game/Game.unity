@@ -412,11 +412,10 @@ MonoBehaviour:
   atmosphere: 0
   backgroundMaterial: {fileID: 2100000, guid: 3e83f2df2a270e94ca3c325a39ebd735, type: 2}
   backgroundMesh: {fileID: 4300000, guid: b0f11f207ae451f49bddfbaf9690e9cb, type: 3}
-  opaquePrefab: {fileID: 1447127621452838, guid: 779f27748c9c8e3459d24dc2c8868619,
+  opaquePrefab: {fileID: 1621617754444626, guid: 917adc8cca84b0e4e8537092f3faa7a3,
     type: 2}
-  transparentPrefab: {fileID: 1447127621452838, guid: 988ee46100bc29d4c9cd5d8257c2bd1b,
+  transparentPrefab: {fileID: 1950413830760030, guid: f08a4c001cd397a4c9f3568fa6e86351,
     type: 2}
-  renderLayer: 28
 --- !u!20 &633277576
 Camera:
   m_ObjectHideFlags: 0
@@ -1237,11 +1236,10 @@ MonoBehaviour:
   atmosphere: 0
   backgroundMaterial: {fileID: 2100000, guid: 3e83f2df2a270e94ca3c325a39ebd735, type: 2}
   backgroundMesh: {fileID: 4300000, guid: b0f11f207ae451f49bddfbaf9690e9cb, type: 3}
-  opaquePrefab: {fileID: 1447127621452838, guid: c2786d25fdaa64244a6493074f9f5a26,
+  opaquePrefab: {fileID: 1255258693594066, guid: 0dc9ecca0d1681b4fb8c7b8342edd682,
     type: 2}
-  transparentPrefab: {fileID: 1447127621452838, guid: 8299e1985c9568548bc0f508de21c83b,
+  transparentPrefab: {fileID: 1204187550311892, guid: d6de74d00cf39e04293f7ebed7667ab2,
     type: 2}
-  renderLayer: 29
 --- !u!114 &1273300470
 MonoBehaviour:
   m_ObjectHideFlags: 0
