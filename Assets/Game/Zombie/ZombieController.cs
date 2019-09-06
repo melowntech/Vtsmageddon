@@ -21,6 +21,7 @@ public class ZombieController : MonoBehaviour
         //agent.updateRotation = false;
         agent.updateUpAxis = false;
         rigidbody = GetComponent<Rigidbody>();
+        pathUpdateDelay = (uint)Random.Range(0, 1000);
         targetDistance = Mathf.Pow(Random.value, 0.5f) * 20;
     }
 
@@ -33,11 +34,11 @@ public class ZombieController : MonoBehaviour
         }
 
         agent.nextPosition = transform.position;
-        if (pathUpdateDelay++ % 120 == 13)
+        if (pathUpdateDelay++ % 50 == 13)
             agent.SetDestination(player.transform.position);
         if (!agent.hasPath)
         {
-            MoveDesire(Vector3.zero);
+            //MoveDesire(Vector3.zero);
             return;
         }
 
@@ -68,7 +69,7 @@ public class ZombieController : MonoBehaviour
 
         animator.speed = Mathf.Max(1, spd);
         animator.SetFloat("forward", move.z);
-        animator.SetFloat("turn", move.x);
+        animator.SetFloat("turn", move.x - 0.5f);
         if (standingCounter > 60)
         {
             if (Random.value < 0.003f)
