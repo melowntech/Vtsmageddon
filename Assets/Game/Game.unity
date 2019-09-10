@@ -396,7 +396,7 @@ GameObject:
   - component: {fileID: 633277573}
   m_Layer: 0
   m_Name: Minimap Camera
-  m_TagString: MainCamera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1437,9 +1437,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1681540879}
   - component: {fileID: 1681540878}
-  - component: {fileID: 1681540877}
   - component: {fileID: 1681540880}
   - component: {fileID: 1681540881}
+  - component: {fileID: 1681540877}
   m_Layer: 0
   m_Name: Planet
   m_TagString: Untagged
@@ -1456,13 +1456,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1681540876}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a3aa6ece2ffcce4a9b1d78425a5dce5, type: 3}
+  m_Script: {fileID: 11500000, guid: 3e936c31e08049c4da9858b417cd8088, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x: 12.2958149
-  y: 55.9303523
-  z: 68
-  singleUse: 1
 --- !u!114 &1681540878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1478,7 +1474,7 @@ MonoBehaviour:
   ConfigUrl: http://altair.mlwn.se/store/stage.melown2015/tilesets/denmark-hilleroed-center/mapConfig.json
   AuthUrl: 
   CreateConfig: '{ "atmosphereDensityTexture":false }'
-  RunConfig: '{ "targetResourcesMemoryKB":2000000 }'
+  RunConfig: '{ "targetResourcesMemoryKB":1000000 }'
   Statistics: This will show statistics at play
 --- !u!4 &1681540879
 Transform:

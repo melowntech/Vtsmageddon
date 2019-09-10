@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SelectCar : MonoBehaviour
@@ -11,6 +9,7 @@ public class SelectCar : MonoBehaviour
     public void OnClick()
     {
         SelectedCarPrefab = CarPrefab;
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
+        if (SelectMap.SelectedUrl != null)
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
     }
 }
