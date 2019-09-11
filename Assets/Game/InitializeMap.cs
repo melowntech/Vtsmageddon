@@ -1,9 +1,18 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InitializeMap : MonoBehaviour
 {
+    void Start()
+    {
+        if (string.IsNullOrEmpty(SelectMap.SelectedUrl))
+            SceneManager.LoadScene("Init"); // go back to menu
+    }
+
     void Update()
     {
+        if (string.IsNullOrEmpty(SelectMap.SelectedUrl))
+            return;
         VtsMap map = GetComponent<VtsMap>();
         map.Map.SetMapconfigPath(SelectMap.SelectedUrl);
         VtsMapMakeLocal mml = gameObject.AddComponent<VtsMapMakeLocal>();
