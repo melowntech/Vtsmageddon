@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class ZombieBreakUp : MonoBehaviour
 {
+    private bool broken = false;
+
     private static void BreakUp(SkinnedMeshRenderer smr)
     {
         GameObject g = smr.gameObject;
@@ -33,6 +35,9 @@ public class ZombieBreakUp : MonoBehaviour
     {
         if (col.gameObject.tag != "Player")
             return;
+        if (broken)
+            return;
+        broken = true;
         BreakUp(transform);
         ScoreLabel.killCount++;
     }
