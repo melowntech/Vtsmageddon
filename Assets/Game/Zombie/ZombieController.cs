@@ -37,9 +37,12 @@ public class ZombieController : MonoBehaviour
         if (pathUpdateDelay++ % 50 == 13)
             agent.SetDestination(player.transform.position);
         if (!agent.hasPath)
-        {
-            //MoveDesire(Vector3.zero);
             return;
+
+        { // update base offset
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position + Vector3.up, Vector3.down, out hit, 2, 1 << 30))
+                agent.baseOffset = 1 - hit.point.y;
         }
 
         Vector3 move = agent.desiredVelocity;
@@ -53,11 +56,6 @@ public class ZombieController : MonoBehaviour
         if (targetDistanceHysteresis)
             move = Vector3.zero;
 
-        MoveDesire(move);
-    }
-
-    void MoveDesire(Vector3 move)
-    {
         float spd = move.magnitude;
         if (move.magnitude > 1)
             move.Normalize();
