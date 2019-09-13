@@ -23,6 +23,8 @@ public class RotorSpin : MonoBehaviour
 
     public void Spin(float angle)
     {
+        if (!tr)
+            return; // the method may be called before the object's start
         tr.localEulerAngles = tr.localEulerAngles + new Vector3(0, angle, 0);
         angle = Mathf.Abs(angle);
         bool fast = angle > threshold;
