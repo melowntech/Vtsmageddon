@@ -35,7 +35,7 @@ public class ZombieController : MonoBehaviour
 
         agent.nextPosition = transform.position;
         if (pathUpdateDelay++ % 50 == 13)
-            agent.SetDestination(player.transform.position);
+            agent.SetDestination(ZombieManager.zombiesTarget);
         if (!agent.hasPath)
             return;
 
