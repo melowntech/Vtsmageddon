@@ -16,5 +16,8 @@ https://assetstore.unity.com/packages/3d/vehicles/land/m3a1-scout-car-53149
 Fork loader:
 https://assetstore.unity.com/packages/3d/vehicles/land/fork-loader-hq-123806
 
+Old Coin:
+https://assetstore.unity.com/packages/3d/props/old-coin-49530
+
 All external assets has been modified!
 
