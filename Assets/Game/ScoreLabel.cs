@@ -6,29 +6,16 @@ public class ScoreLabel : MonoBehaviour
     public UnityEngine.UI.Text textScore;
     public UnityEngine.UI.Text textRate;
 
-    public static uint killCount = 0;
-    private int lastZombies = 0;
-    private int bestRate = 0;
-    private Queue<System.DateTime> zombies = new Queue<System.DateTime>();
+    private static uint score = 0;
+    private static int bestRate = 0;
+    private static Queue<System.DateTime> timestamps = new Queue<System.DateTime>();
 
-    void CountZombies()
+    void UpdateTimestamps()
     {
-        // remove stalled zombies
-        {
-            var thr = System.DateTime.Now + System.TimeSpan.FromSeconds(-120);
-            while (zombies.Count > 0 && zombies.Peek() < thr)
-                zombies.Dequeue();
-        }
-
-        // add new zombies
-        {
-            var t = System.DateTime.Now;
-            while (lastZombies < killCount)
-            {
-                lastZombies++;
-                zombies.Enqueue(t);
-            }
-        }
+        // remove stalled timestamps
+        var thr = System.DateTime.Now + System.TimeSpan.FromSeconds(-120);
+        while (timestamps.Count > 0 && timestamps.Peek() < thr)
+            timestamps.Dequeue();
     }
 
     void Update()
@@ -37,25 +24,30 @@ public class ScoreLabel : MonoBehaviour
             return;
         if (Input.GetAxis("Restart") > 0)
         {
-            killCount = 0;
-            lastZombies = 0;
+            score = 0;
             bestRate = 0;
-            zombies.Clear();
+            timestamps.Clear();
             return;
         }
-        CountZombies();
-        textScore.text = killCount.ToString();
+        UpdateTimestamps();
+        textScore.text = score.ToString();
             textRate.text = "- (" + bestRate.ToString() + ")";
-        if (zombies.Count >= 1)
+        if (timestamps.Count >= 1)
         {
-            float duration = (float)(System.DateTime.Now - zombies.Peek()).TotalSeconds;
+            float duration = (float)(System.DateTime.Now - timestamps.Peek()).TotalSeconds;
             if (duration > 30)
             {
-                int rate = Mathf.RoundToInt(60f * zombies.Count / duration);
+                int rate = Mathf.RoundToInt(60f * timestamps.Count / duration);
                 if (rate > bestRate)
                     bestRate = rate;
                 textRate.text = rate.ToString() + " (" + bestRate.ToString() + ")";
             }
         }
+    }
+
+    public static void AddScore()
+    {
+        score++;
+        timestamps.Enqueue(System.DateTime.Now);
     }
 }

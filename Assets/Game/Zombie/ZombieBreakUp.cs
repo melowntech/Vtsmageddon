@@ -10,14 +10,11 @@ public class ZombieBreakUp : MonoBehaviour
         g.tag = "Untagged";
         g.AddComponent<MeshRenderer>().sharedMaterial = smr.sharedMaterial;
         g.AddComponent<MeshFilter>().mesh = smr.sharedMesh;
-        //g.AddComponent<SphereCollider>().radius = 0.1f;
         var mc = g.AddComponent<MeshCollider>();
         mc.sharedMesh = smr.sharedMesh;
         mc.convex = true;
         Rigidbody r = g.AddComponent<Rigidbody>();
         r.mass = 2;
-        //r.drag = 0.3f;
-        //r.angularDrag = 0.8f;
         Destroy(smr);
         Destroy(g, Random.Range(5f, 15f));
         g.transform.SetParent(null);
@@ -39,6 +36,6 @@ public class ZombieBreakUp : MonoBehaviour
             return;
         broken = true;
         BreakUp(transform);
-        ScoreLabel.killCount++;
+        ScoreLabel.AddScore();
     }
 }
