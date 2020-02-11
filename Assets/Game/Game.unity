@@ -307,9 +307,9 @@ MonoBehaviour:
 
 '
   Statistics: This will show statistics at play
-  atmosphere: 0
   backgroundMaterial: {fileID: 2100000, guid: 3e83f2df2a270e94ca3c325a39ebd735, type: 2}
   backgroundMesh: {fileID: 4300000, guid: b0f11f207ae451f49bddfbaf9690e9cb, type: 3}
+  blueNoiseTexture: {fileID: 18700000, guid: 41b100218ce8cb047bf65c90b7670664, type: 2}
   opaquePrefab: {fileID: 1621617754444626, guid: 917adc8cca84b0e4e8537092f3faa7a3,
     type: 3}
   transparentPrefab: {fileID: 1950413830760030, guid: f08a4c001cd397a4c9f3568fa6e86351,
@@ -1187,13 +1187,13 @@ MonoBehaviour:
   controlTransformation: 0
   controlNearFar: 0
   Config: '{ "traverseModeSurfaces":"balanced", "traverseModeGeodata":"none", "maxTexelToPixelScale":1.2,
-    "cullingOffsetDistance":100, "lodBlending":2 }
+    "cullingOffsetDistance":100 }
 
 '
   Statistics: This will show statistics at play
-  atmosphere: 0
   backgroundMaterial: {fileID: 2100000, guid: 3e83f2df2a270e94ca3c325a39ebd735, type: 2}
   backgroundMesh: {fileID: 4300000, guid: b0f11f207ae451f49bddfbaf9690e9cb, type: 3}
+  blueNoiseTexture: {fileID: 18700000, guid: 41b100218ce8cb047bf65c90b7670664, type: 2}
   opaquePrefab: {fileID: 1255258693594066, guid: 0dc9ecca0d1681b4fb8c7b8342edd682,
     type: 3}
   transparentPrefab: {fileID: 1204187550311892, guid: d6de74d00cf39e04293f7ebed7667ab2,
@@ -1270,6 +1270,7 @@ MonoBehaviour:
   CreateConfig: '{ "atmosphereDensityTexture":false }'
   RunConfig: '{ "targetResourcesMemoryKB":1000000 }'
   Statistics: This will show statistics at play
+  VtsAtmosphere: 0
 --- !u!4 &1681540879
 Transform:
   m_ObjectHideFlags: 0
