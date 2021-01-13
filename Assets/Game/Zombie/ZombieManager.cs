@@ -7,6 +7,12 @@ public class ZombieManager : MonoBehaviour
     private GameObject player;
     public static Vector3 zombiesTarget = new Vector3();
 
+    void Start()
+    {
+        if (!OptionZombies.ZombiesEnabled)
+            Destroy(this);
+    }
+
     void Update()
     {
         if (!player)
