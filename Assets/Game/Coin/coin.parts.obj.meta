@@ -1,20 +1,65 @@
 fileFormatVersion: 2
-guid: 69e570a331da80d4f9bb60a69b974919
+guid: 4849d196766e92c4faccca17110910c3
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Default
+    100002: default
+    100004: coin.000
+    100006: coin.001
+    100008: coin.002
+    100010: coin.003
     400000: //RootNode
-    400002: Default
-    2300000: Default
-    3300000: Default
-    4300000: Default
+    400002: default
+    400004: coin.000
+    400006: coin.001
+    400008: coin.002
+    400010: coin.003
+    2100000: defaultMat
+    2100002: coin.000Mat
+    2100004: coin.001Mat
+    2100006: coin.002Mat
+    2100008: coin.003Mat
+    2300000: default
+    2300002: coin.000
+    2300004: coin.001
+    2300006: coin.002
+    2300008: coin.003
+    3300000: default
+    3300002: coin.000
+    3300004: coin.001
+    3300006: coin.002
+    3300008: coin.003
+    4300000: default
+    4300002: coin.000
+    4300004: coin.001
+    4300006: coin.002
+    4300008: coin.003
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: DefaultMat
+      name: coin.000Mat
+    second: {fileID: 2100000, guid: b0fd845b3b348c44694de5f36b35d8da, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: coin.001Mat
+    second: {fileID: 2100000, guid: b0fd845b3b348c44694de5f36b35d8da, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: coin.002Mat
+    second: {fileID: 2100000, guid: b0fd845b3b348c44694de5f36b35d8da, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: coin.003Mat
+    second: {fileID: 2100000, guid: b0fd845b3b348c44694de5f36b35d8da, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: defaultMat
     second: {fileID: 2100000, guid: b0fd845b3b348c44694de5f36b35d8da, type: 2}
   materials:
     importMaterials: 1
@@ -77,7 +122,7 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  importAnimation: 0
+  importAnimation: 1
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
@@ -93,7 +138,7 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
-    skeletonHasParents: 0
+    skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 0
   humanoidOversampling: 1
