@@ -319,7 +319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MapUrl: http://vts-produkce:8070/store/resources/tilesets/vadstena.gcs.stGallen-lidar.dilluted6/vadstena.gcs.stGallen-lidar.dilluted6.tiled002-001/mapConfig.json
-  MapPosition: {x: 9.41334, y: 47.442368, z: 702}
+  MapPosition: {x: 9.406916, y: 47.438362, z: 710}
   SunDirection: {x: 132.9, y: 190.7, z: 0}
 --- !u!114 &208155051
 MonoBehaviour:
